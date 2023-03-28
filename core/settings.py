@@ -2,7 +2,7 @@ from pathlib import Path
 from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+AUTH_USER_MODEL = "user.User"
 SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG", cast = bool)
@@ -19,6 +19,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    #Apps
+    'user'
 ]
 
 MIDDLEWARE = [
